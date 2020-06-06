@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div id="box" myCustom="自定义属性" class="class1"></div>
+    <script>
+      //获取元素自身带有的
+      var div = document.querySelector('div');
+      //获取元素属性值
+      console.log(div.id);
+      //自定义属性获取
+      console.log(div.getAttribute('id'));
+      console.log(div.getAttribute('myCustom'));
+
+      //设置属性值
+      div.id = 'box_1';
+      div.setAttribute('myCustom', 'haha');
+      div.setAttribute('class', 'class2');
+      console.log(div.getAttribute('id'));
+      console.log(div.getAttribute('myCustom'));
+      console.log(div.getAttribute('class'));
+
+      //删除属性
+      div.removeAttribute('myCustom');
+      console.log(div.getAttribute('myCustom'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>className</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        background-color: red;
+      }
+      .change {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      var test = document.querySelector('div');
+      test.onclick = function () {
+        // 让我们当前元素的类名改为了change
+        this.className = 'change';
+        //如果想要保留原来的类名
+        this.className = 'box change';
+      };
+    </script>
+  </body>
+</html>

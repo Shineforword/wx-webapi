@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>显示</title>
+    <style>
+      input {
+        color: #999999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 失去焦点onblur 获得焦点onfocus  -->
+    <input type="text" name="" id="" value="手机" />
+    <script>
+      var text = document.querySelector('input');
+      text.onfocus = function () {
+        console.log('得到了焦点');
+        if (this.value == '手机') {
+          this.value = '';
+        }
+        this.style.color = '#333';
+      };
+      text.onblur = function () {
+        if (this.value == '') {
+          this.value = '手机';
+        }
+        console.log('失去了焦点');
+        this.style.color = '#999';
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表单全选或取消全选</title>
+    <style>
+      .wrap {
+        width: 400px;
+        height: 250px;
+        margin: 100px auto;
+      }
+      .wrap table {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      .wrap table thead {
+        height: 30px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="cb_all" /></th>
+            <th>商品</th>
+            <th>价格</th>
+          </tr>
+        </thead>
+        <tbody id="tb">
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>iPhone 8</td>
+            <td>8000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>iPhone 8</td>
+            <td>8000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>iPhone 8</td>
+            <td>8000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>iPhone 8</td>
+            <td>8000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      //获取元素
+      var cb_all = document.getElementById('cb_all');
+      var chs = document.getElementById('tb').getElementsByTagName('input');
+      //注册事件(全选取消全选)
+      cb_all.onclick = function () {
+        console.log(this.checked);
+        for (var i = 0; i < chs.length; i++) {
+          chs[i].checked = this.checked;
+        }
+      };
+      for (var i = 0; i < chs.length; i++) {
+        //注册事件
+        chs[i].onclick = function () {
+          //校验flag
+          var flag = true;
+          for (var i = 0; i < chs.length; i++) {
+            if (!chs[i].checked) {
+              flag = false;
+              break; //提高执行效率
+            }
+          }
+          cb_all.checked = flag;
+        };
+      }
+    </script>
+  </body>
+</html>

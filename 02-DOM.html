@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <!-- 文档对象模型 是W3C组织推荐的可处理可扩展标记语言的标准编程接口-->
+
+    <!-- DOM树 -->
+    <!-- 文档:一个页面就是一个文档,DOM中使用document表示 -->
+    <!-- 元素:页面中的所有标签都是元素,DOM中使用element表示 -->
+    <!-- 节点:网页中所有内容都是节点(标签,属性 文本,注释等) DOM中用node表示-->
+
+    <!-- DOM在实际开发中主要用来操作元素 -->
+    <!-- 1.根据ID获取 -->
+    <!-- 2.根据标签名获取 -->
+    <!-- 3.通过Html5新增的方法获取 -->
+    <!-- 4.特殊元素获取 -->
+
+    <div id="time">2019</div>
+    <div class="box">2020</div>
+
+    <ul>
+      <li>首页</li>
+      <li>购物车</li>
+      <li>分类</li>
+      <li>哈哈</li>
+      <li>个人中心</li>
+    </ul>
+
+    <!-- 文档自上而下加载 -->
+    <script>
+      // id获取(完整的标签),返回的是一个元素对象
+      var time = document.getElementById('time');
+      console.log(time);
+      console.log(typeof time);
+      console.dir(time); //可以打印元素对象
+
+      //根据标签名获取:获取过来元素对象的集合,以伪数组存储
+      var lis = document.getElementsByTagName('li');
+      console.log(lis);
+      console.log(lis[0]);
+      //element.getElementsByTagName可以得到这个元素里边的某些标签
+
+      //新增h5方法
+      var box = document.getElementsByClassName('box');
+      console.log(box);
+
+      //querySelector 返回指定选择器的第一个元素对象
+      var time = document.querySelector('#time');
+      console.log(time);
+      var box = document.querySelector('.box');
+      console.log(box);
+      var firstli = document.querySelector('li');
+      console.log(firstli);
+
+      //querySelectorAll 返回指定选择的所有对象
+      var allli = document.querySelectorAll('li');
+      console.log(allli);
+
+      // 获取特殊元素
+      //body
+      var bodyEl = document.body;
+      console.log(bodyEl);
+      //html
+      var htmlEl = document.documentElement;
+      console.log(htmlEl);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三种区别</title>
+  </head>
+  <body>
+    <!-- 1.document.wirte 如果文档流执行完毕,这个方法会导致页面的全部重绘-->
+    <!-- 2.document.innerHTML 是将内容写入某一个DOM节点,不会导致页面全部重绘-->
+    <!-- 2.document.innerHTML 创建多个元素效率更高(不要采取拼接字符串,采取数组形势拼接),结构稍复杂-->
+    <!-- 3.document.createElement 创建多个元素效率稍低,但是结构清晰-->
+  </body>
+</html>

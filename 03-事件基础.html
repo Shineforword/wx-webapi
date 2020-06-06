@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件</title>
+  </head>
+  <body>
+    <!-- 事件是触发响应的一种机制 -->
+    <!-- 1.事件源 事件类型 事件处理程序  事件三要素 -->
+    <!-- 事件源:事件被触发的对象 -->
+    <!-- 事件类型:如何触发-->
+    <!-- 事件处理程序:通过一个函数赋值的方式完成 -->
+
+    <!-- 操作元素 -->
+    <!-- 改变元素内容 -->
+    <!--  -->
+    <button id="btn">唐伯虎</button>
+    <script>
+      //获取事件源
+      var btn = document.getElementById('btn');
+      //注册事件 或绑定事件
+      btn.onclick = function () {
+        // 事件处理程序
+        alert('点秋香');
+      };
+    </script>
+  </body>
+</html>

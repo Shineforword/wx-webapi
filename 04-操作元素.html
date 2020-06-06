@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>操作元素</title>
+  </head>
+  <body>
+    <!-- 操作DOM元素的核心内容 -->
+    <!-- 1.操作元素内容 2.操作常见元素属性 3.操作表单元素属性 4操作元素样式属性 -->
+    <button>按钮</button>
+    <div>某个事件</div>
+    <script>
+      //点击按钮改变div中的内容
+      var btnE = document.querySelector('button');
+      var divE = document.querySelector('div');
+      //注册事件
+      btnE.onclick = function () {
+        // 处理事件
+        // innerText 不识别标签 (可以获取内容) 去除空格和换行
+        // divE.innerText = Date.now();
+        // innerHTML 识别标签 (可以获取内容)  保留空格和换行
+        divE.innerHTML = '<strong>' + Date.now() + '</strong>';
+        console.log(divE.innerHTML);
+        console.log(divE.innerText);
+      };
+      // 常用属性操作
+    </script>
+  </body>
+</html>

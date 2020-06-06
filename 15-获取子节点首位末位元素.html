@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首末位</title>
+  </head>
+  <body>
+    <h5>此两种方法有兼容性问题,只支持IE9以上版本</h5>
+    <h5>实际开发中使用:ol.children[0] ol.children[ol.children.length - 1]</h5>
+    <ol>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <script>
+      var ol = document.querySelector('ol');
+      // 获取首位元素节点
+      console.log(ol.firstElementChild);
+      // 获取首位节点
+      console.log(ol.firstChild);
+
+      // 实际开发中 采用方法
+      console.log(ol.children[0]);
+      console.log(ol.children[ol.children.length - 1]);
+    </script>
+  </body>
+</html>

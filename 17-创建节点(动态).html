@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      console.dir();
+
+      //1.创建元素节点
+      var li = document.createElement('li');
+      //2.添加节点
+      // node.appendChild(child) 方法将一个节点添加到指定父节点的子节点列表的末位,类似于CSS里面的after伪元素
+      var ul = document.querySelector('ul');
+      console.dir(ul);
+      ul.appendChild(li);
+      console.dir(ul);
+      //指定插入
+      ul.insertBefore(li, ul.children[0]);
+      console.dir(ul);
+    </script>
+  </body>
+</html>

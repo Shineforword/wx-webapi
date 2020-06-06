@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>循环精灵图</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+
+      .box {
+        width: 320px;
+        margin: 100px auto;
+      }
+      .box li {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background-color: pink;
+        margin: 15px;
+        background: url(images/sprite.png) no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 精灵图是有规律的 -->
+    <!-- 使用for -->
+    <div class="box">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+      var lis = document.querySelectorAll('li');
+      for (var i = 0; i < lis.length; i++) {
+        var index = i * 88;
+        lis[i].style.backgroundPosition = '0 -' + index + 'px';
+      }
+    </script>
+  </body>
+</html>

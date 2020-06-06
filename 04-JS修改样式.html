@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>修改样式</title>
+    <style>
+      div {
+        width: 200px;
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1.element.style 行内样式操作 -->
+    <!-- 2.element.className 类名样式操作 -->
+    <div></div>
+    <!-- js修改的是行内样式权重高 -->
+    <script>
+      var div = document.querySelector('div');
+      div.onclick = function () {
+        this.style.backgroundColor = 'purple';
+        this.style.width = '500px';
+      };
+    </script>
+  </body>
+</html>

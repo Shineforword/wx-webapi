@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注册事件</title>
+  </head>
+  <body>
+    <button>传统按钮</button>
+    <button>方法监听</button>
+    <button>IE9 可使用attachEvent IE独有</button>
+
+    <script>
+      var btns = document.querySelectorAll('button');
+      // 1唯一性
+      btns[0].onclick = function () {
+        alert('hi');
+      };
+      //会覆盖前一事件
+      btns[0].onclick = function () {
+        alert('how are you?');
+      };
+
+      //2.IE9以前不支持 可使用attachEvent()替代 按照注册顺序依次执行
+      // addEventListener(type,listener[,userCapture])
+      // type 事件类型 click 不带on
+      // listener 事件处理函数
+      // userCapture
+      btns[1].addEventListener('click', function () {
+        alert('22');
+      });
+      btns[1].addEventListener('click', function () {
+        alert('33');
+      });
+      btns[1].addEventListener('click', function () {
+        alert('22');
+      });
+      btns[2].attachEvent('onclick', function () {
+        alert('22');
+      });
+      btns[2].attachEvent('onclick', function () {
+        alert('11');
+      });
+    </script>
+  </body>
+</html>

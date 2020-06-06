@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态表格</title>
+    <style>
+      table {
+        width: 400px;
+        margin: 100px auto;
+      }
+      thead {
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+      tr {
+        height: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>科目</th>
+          <th>成绩</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      //准备数据(数组)
+      var datas = [
+        {
+          name: '李白',
+          subject: 'js',
+          score: 100,
+        },
+        {
+          name: '杜甫',
+          subject: 'js',
+          score: 98,
+        },
+        {
+          name: '王维',
+          subject: 'js',
+          score: 97,
+        },
+        {
+          name: '李牧',
+          subject: 'js',
+          score: 99,
+        },
+      ];
+      //动态生成
+      var tbd = document.querySelector('tbody');
+      // 生成行
+      for (var i = 0; i < datas.length; i++) {
+        //  创建tr
+        var tr = document.createElement('tr');
+        tbd.appendChild(tr);
+        //创建单元格
+        for (var key in datas[i]) {
+          var td = document.createElement('td');
+          td.innerHTML = datas[i][key];
+          tr.appendChild(td);
+        }
+        // 创建删除
+        var td = document.createElement('td');
+        td.innerHTML = '<a href=javascript:;>删除</a>';
+        tr.appendChild(td);
+      }
+      //删除操作函数
+      var as = document.querySelectorAll('a');
+      for (var i = 0; i < as.length; i++) {
+        as[i].onclick = function () {
+          // 点击a删除所在行
+          tbd.removeChild(this.parentNode.parentNode);
+        };
+      }
+    </script>
+  </body>
+</html>

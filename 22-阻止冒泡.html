@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>阻止冒泡</title>
+  </head>
+  <body>
+    <!-- 事件冒泡:开始时由最具体的元素接受,然后逐级向上传播到DOM最顶层节点 -->
+    <!-- 事件冒泡本身的特性会带来坏处也可以带来好处 -->
+    <!-- W3C推荐 stopPropagation -->
+    <div class="father">
+      father
+      <div class="son">son</div>
+    </div>
+    <script>
+      var son = document.querySelector('.son');
+      var father = document.querySelector('.father');
+      son.addEventListener(
+        'click',
+        function (e) {
+          alert('son');
+          // 阻止冒泡 不在传播
+          e.stopPropagation();
+          // 非标准
+          e.cancelBubble = true;
+        },
+        false
+      );
+      father.addEventListener(
+        'click',
+        function (e) {
+          alert('father');
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

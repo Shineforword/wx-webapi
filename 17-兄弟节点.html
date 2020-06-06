@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+      var div = document.querySelector('div');
+      //1.
+      console.log(div.nextSibling);
+      console.log(div.previousSibling);
+      //2.获取元素节点 (IE9以上支持)
+      console.log(div.previousElementSibling);
+      console.log(div.nextElementSibling);
+    </script>
+  </body>
+</html>
